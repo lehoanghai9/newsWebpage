@@ -1,0 +1,240 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+body{
+  font-size:15px;
+  padding-left:7rem;
+  padding-right: 7rem;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  font-family: Inter;
+}
+
+.navbar{
+  color:hsl(236, 13%, 42%);
+  margin-bottom: 3rem;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul{ 
+  list-style-type: none;
+  margin:0;
+  padding:0;
+}
+
+li{
+  margin-left: 3.5rem;
+  display: inline;
+}
+
+.main{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1.3fr 0.7fr auto;
+  grid-template-areas: "pic pic dark" "title more dark" "one two three"
+  ;
+  grid-gap: 2rem;
+}
+
+.imgdiv{
+  grid-area: pic;
+}
+
+.imgdiv img{
+  object-fit: cover;
+  height:100%;
+  width: 100%;
+}
+
+.bigtitle{
+  line-height: 3.6rem;
+  font-size: 4rem;
+  font-weight: 700;
+  grid-area: title;
+}
+
+.dark{
+  padding: 3rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between ;
+  color: white;
+  background-color: black;
+  grid-area: dark;
+  line-height: 2rem;
+}
+
+.dark h1{
+  color:hsl(35, 77%, 62%);
+  font-size: 3rem;
+}
+
+.dark p{
+  color:hsl(233, 8%, 79%);
+  font-size: 1.1rem;
+}
+
+
+.dark hr{
+  background-color:hsl(233, 8%, 79%);
+  height: 1px;
+}
+
+.dark h2:hover{
+  color:hsl(35, 77%, 62%);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.readmore{
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: hsl(236, 13%, 42%);
+  line-height: 1.5rem;
+  grid-area: more;
+}
+
+
+.readmore button{
+  position: absolute;
+  background-color: hsl(5, 85%, 63%);
+  border:none;
+  color:white;
+  bottom:0;
+  left:0;
+  height: 3rem;
+  width: 50%;
+  font-family: Inter;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  box-shadow: 0 5px rgb(193, 193, 193);
+  border-radius: 5px;
+  border: 3px hsl(5, 85%, 63%) solid;
+}
+
+button:hover{
+  
+  background-color: white;
+  transition: 0.3s;
+  color: hsl(5, 85%, 63%);
+  cursor: pointer;
+}
+
+button:active{
+  background-color: white;
+  box-shadow: 0 3px #666;
+  transform: translateY(8px);
+}
+
+.one{
+  grid-area: one;
+}
+
+.two{
+  grid-area: two;
+}
+
+.three{
+  grid-area: three;
+}
+
+.one, .two , .three{
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap:2rem;
+}
+
+.one img, .two img, .three img{
+  height: 8rem;
+}
+
+.num{
+  color: hsl(233, 8%, 79%);
+}
+
+.tit{
+  font-weight: 700;
+}
+
+.tit:hover{
+  cursor: pointer;
+  color: hsl(5, 85%, 63%);
+  transition: 0.3s;
+}
+
+.pp{
+  margin-top: 1rem;
+  color:hsl(236, 13%, 42%);
+  line-height: 1.5rem;
+}
+
+li:hover{
+  color:hsl(5, 85%, 63%);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.mobileimg{
+  display: none;
+  visibility: hidden;
+}
+
+@media (max-width:900px){
+  ul{
+    display: none;
+  visibility: hidden;
+  }
+
+  body {
+    padding-bottom: 3rem;
+    padding: 1rem 1rem;
+  }
+
+  .main{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 0.3fr auto 1.6fr auto auto auto;
+    grid-template-areas: 
+    "pic"
+    "title"
+    "more"
+    "dark"
+    "one"
+    "two"
+    "three";
+  }
+
+
+
+  .dark{
+    margin-top: 3rem;
+    height: 40rem;;
+  }
+
+  .bigtitle{
+    font-size: 3.5rem;
+  }
+
+  .readmore{
+    min-height: 10rem;
+  }
+
+  .one, .two , .three{
+    justify-content: start ;
+  }
+  .one, .two, .three{
+    margin:0;
+  }
+
+  .one{
+    margin-top: 2rem;
+  }
+}
